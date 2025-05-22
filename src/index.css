@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+  
+  /* Optional: Hide scrollbar while keeping Tailwind compatibility */
+  body {
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+  }
+  
+  body::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, Edge */
+  }
+  
+  body {
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+  }
+
+  @keyframes custom-bounce {
+    0%, 100% {
+      transform: translate(-50%, -33.333%) translateY(-5px);
+    }
+    50% {
+      transform: translate(-50%, -33.333%) translateY(5px);
+    }
+  }
+  
+  .custom-bounce {
+    animation: custom-bounce 2s infinite ease-in-out;
+    
+  }
