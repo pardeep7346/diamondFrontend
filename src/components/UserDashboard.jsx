@@ -13,7 +13,7 @@ const UserDashboard = () => {
     const fetchUserData = async () => {
       try {
         
-        const response = await axios.get('http://localhost:8000/users', {
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/users`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('accessToken')}`
           },
@@ -41,7 +41,7 @@ const UserDashboard = () => {
   useEffect(() => {
     const fetchPDFs = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/users/pdfs', {
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/users/pdfs`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('accessToken')}`
           },
@@ -74,7 +74,7 @@ const UserDashboard = () => {
   // Download PDF
   const downloadPDF = (filename) => {
     const link = document.createElement('a');
-    link.href = `http://localhost:8000/users/download/${filename}`;
+    link.href = `${process.env.REACT_APP_API_URL}/users/download/${filename}`;
     link.download = filename;
     document.body.appendChild(link);
     link.click();
@@ -145,7 +145,7 @@ const UserDashboard = () => {
               </button>
             </div>
             <embed
-              src={`http://localhost:8000/users/view/${selectedPdf}`}
+              src={`${process.env.REACT_APP_API_URL}/users/view/${selectedPdf}`}
               type="application/pdf"
               width="100%"
               height="600px"

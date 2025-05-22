@@ -1,4 +1,3 @@
-import React from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import useScrollDirection from "../hooks/useScrollDirection";
 import axios from "axios";
@@ -20,7 +19,7 @@ const Navbar = () => {
     }
     try {
       const response = await axios.post(
-        "http://localhost:8000/admin/logout",
+        `${process.env.REACT_APP_API_URL}/admin/logout`,
         {},
         {
           headers: { Authorization: `Bearer ${token}` },

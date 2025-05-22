@@ -36,7 +36,7 @@ const ContactUs = () => {
     try {
       setStatus("Sending...");
       const response = await axios.post(
-        "http://localhost:8000/users/contact",
+       `${process.env.REACT_APP_API_URL}/users/contact`,
         formData
       );
       setStatus(response.data.message);

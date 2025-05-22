@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import AdminRegistration from "./AdminRegistrationForm";
 import axios from "axios";
 
@@ -35,7 +35,7 @@ const AdminDashboard = () => {
       if (!token) {
         throw new Error("No access token found");
       }
-      const response = await axios.get("http://localhost:8000/users", {
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/users`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -58,7 +58,7 @@ const AdminDashboard = () => {
     try {
       const token = localStorage.getItem("accessToken");
       const response = await axios.delete(
-        `http://localhost:8000/users/${userId}`,
+        `${process.env.REACT_APP_API_URL}/users/${userId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -93,7 +93,7 @@ const AdminDashboard = () => {
       console.log("Form data:", formData);
 
       const response = await axios.post(
-        "http://localhost:8000/users/register",
+        `${process.env.REACT_APP_API_URL}/users/register`,
         formData,
         {
           headers: {
