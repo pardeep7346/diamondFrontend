@@ -58,7 +58,7 @@ const AdminDashboard = () => {
     try {
       const token = localStorage.getItem("accessToken");
       const response = await axios.delete(
-        `${process.env.REACT_APP_API_URL}/users/${userId}`,
+        `https://diamondcc.onrender.com/users/${userId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -93,7 +93,7 @@ const AdminDashboard = () => {
       console.log("Form data:", formData);
 
       const response = await axios.post(
-        `${process.env.REACT_APP_API_URL}/users/register`,
+        `https://diamondcc.onrender.com/users/register`,
         formData,
         {
           headers: {

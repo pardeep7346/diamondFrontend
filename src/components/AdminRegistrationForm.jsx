@@ -33,7 +33,7 @@ const AdminRegistration = ({ switchToUserReg }) => {
 
     try {
       const response = await axios.post(
-        `${process.env.REACT_APP_API_URL}/admin/register-admin`,
+        `https://diamondcc.onrender.com/admin/register-admin`,
         formData,
         {
           headers: {

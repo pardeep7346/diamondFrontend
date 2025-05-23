@@ -13,7 +13,7 @@ const UserDashboard = () => {
     const fetchUserData = async () => {
       try {
         
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/users`, {
+        const response = await axios.get(`https://diamondcc.onrender.com/users`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('accessToken')}`
           },
@@ -41,7 +41,7 @@ const UserDashboard = () => {
   useEffect(() => {
     const fetchPDFs = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/users/pdfs`, {
+        const response = await axios.get(`https://diamondcc.onrender.com/users/pdfs`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('accessToken')}`
           },
@@ -74,7 +74,7 @@ const UserDashboard = () => {
   // Download PDF
   const downloadPDF = (filename) => {
     const link = document.createElement('a');
-    link.href = `${process.env.REACT_APP_API_URL}/users/download/${filename}`;
+    link.href = `https://diamondcc.onrender.com/users/download/${filename}`;
     link.download = filename;
     document.body.appendChild(link);
     link.click();
