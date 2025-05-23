@@ -35,7 +35,7 @@ const AdminDashboard = () => {
       if (!token) {
         throw new Error("No access token found");
       }
-      const response = await axios.get(`${process.env.REACT_APP_API_URL}/users`, {
+      const response = await axios.get(`https://diamondcc.onrender.com/users`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
