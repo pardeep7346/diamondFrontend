@@ -90,7 +90,7 @@ const AdminDashboard = () => {
     }
 
     try {
-      console.log("Form data:", formData);
+     
 
       const response = await axios.post(
         `https://diamondcc.onrender.com/users/register`,

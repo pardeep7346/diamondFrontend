@@ -37,9 +37,7 @@ const Login = () => {
       );
 
       if (response.data.success) {  
-        console.log(response.data);
-        console.log(response.data.data.accessToken);
-        
+       
         
         // Store access token
         localStorage.setItem("accessToken", response.data.data.accessToken);
