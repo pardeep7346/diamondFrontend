@@ -65,13 +65,20 @@ const UserDashboard = () => {
     fetchPDFs();
   }, []);
   // View PDF inline
-  <embed
-    src={selectedPdf} // Changed: Use the blob URL directly
-    type="application/pdf"
-    width="100%"
-    height="600px"
-    className="border"
-  />;
+  const viewPDF = async (filename) => {
+    try {
+      const response = await fetch(
+        `https://diamondcc.onrender.com/users/view/${filename}`
+      );
+      if (!response.ok) throw new Error("Failed to fetch PDF");
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      setSelectedPdf(url); // Changed: Store the blob URL instead of filename
+    } catch (error) {
+      console.error("Error fetching PDF:", error);
+    }
+  };
+
   // Close the PDF viewer
   const closePDF = () => {
     if (selectedPdf) {
