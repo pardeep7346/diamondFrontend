@@ -72,14 +72,14 @@ const UserDashboard = () => {
   };
 
   // Download PDF
-  const downloadPDF = (filename) => {
-    const link = document.createElement('a');
-    link.href = `https://diamondcc.onrender.com/users/download/${filename}`;
-    link.download = filename;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+  // const downloadPDF = (filename) => {
+  //   const link = document.createElement('a');
+  //   link.href = `https://diamondcc.onrender.com/users/download/${filename}`;
+  //   link.download = filename;
+  //   document.body.appendChild(link);
+  //   link.click();
+  //   document.body.removeChild(link);
+  // };
 
   return (
     <div className='min-h-screen bg-zinc-950 text-white'>
@@ -118,12 +118,7 @@ const UserDashboard = () => {
                 >
                   View
                 </button>
-                  <button
-                    onClick={() => downloadPDF(filename)}
-                    className="px-4 py-2  bg-gradient-to-tr from-red-500 via-pink-500 to-blue-500 text-white drop-shadow-sm drop-shadow-white"
-                  >
-                    Download
-                  </button>
+                 
               </div>
             </li>
           ))}
