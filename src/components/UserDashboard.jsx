@@ -65,7 +65,7 @@ const UserDashboard = () => {
   const viewPDF = async(filename) => {
    
  try {
-    const response = await fetch(`https://your-render-backend.com/api/pdf/view/${filename}`);
+    const response = await fetch(`https://your-render-backend.com/users/view/${filename}`);
     if (!response.ok) throw new Error('Failed to fetch PDF');
     const blob = await response.blob();
     const url = window.URL.createObjectURL(blob);
