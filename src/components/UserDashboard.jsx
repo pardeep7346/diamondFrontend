@@ -149,13 +149,7 @@ const UserDashboard = () => {
                 Close
               </button>
             </div>
-            <embed
-              src={`https://diamondcc.onrender.com/users/view/${selectedPdf}`}
-              type="application/pdf"
-              width="100%"
-              height="600px"
-              className="border"
-            />
+           {pdfUrl && <iframe src={pdfUrl} width="100%" height="600px" />}
           </div>
         </div>
       )}
