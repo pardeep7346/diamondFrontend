@@ -62,8 +62,18 @@ const UserDashboard = () => {
     fetchPDFs();
   }, []);
   // View PDF inline
-  const viewPDF = (filename) => {
+  const viewPDF = async(filename) => {
+   
+ try {
+    const response = await fetch(`https://your-render-backend.com/api/pdf/view/${filename}`);
+    if (!response.ok) throw new Error('Failed to fetch PDF');
+    const blob = await response.blob();
+    const url = window.URL.createObjectURL(blob);
     setSelectedPdf(filename);
+  } catch (error) {
+    console.error('Error fetching PDF:', error);
+  }
+
   };
 
   // Close the PDF viewer
@@ -140,7 +150,7 @@ const UserDashboard = () => {
               </button>
             </div>
             <embed
-              src={`${process.env.REACT_APP_API_URL}/users/view/${selectedPdf}`}
+              src={`https://diamondcc.onrender.com/users/view/${selectedPdf}`}
               type="application/pdf"
               width="100%"
               height="600px"
