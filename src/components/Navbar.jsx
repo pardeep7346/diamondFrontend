@@ -19,7 +19,7 @@ const Navbar = () => {
     }
     try {
       const response = await axios.post(
-        `https://diamondcc.onrender.com/admin/logout`,
+        `https://diamondbackend-zss4.onrender.com/admin/logout`,
         {},
         {
           headers: { Authorization: `Bearer ${token}` },

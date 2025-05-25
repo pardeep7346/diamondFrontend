@@ -13,7 +13,7 @@ const UserDashboard = () => {
     const fetchUserData = async () => {
       try {
         const response = await axios.get(
-          `https://diamondcc.onrender.com/users`,
+          `https://diamondbackend-zss4.onrender.com/users`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -42,7 +42,7 @@ const UserDashboard = () => {
     const fetchPDFs = async () => {
       try {
         const response = await axios.get(
-          `https://diamondcc.onrender.com/users/pdfs`,
+          `https://diamondbackend-zss4.onrender.com/users/pdfs`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -68,7 +68,7 @@ const UserDashboard = () => {
   const viewPDF = async (filename) => {
     try {
       const response = await fetch(
-        `https://diamondcc.onrender.com/users/view/${filename}`
+        `https://diamondbackend-zss4.onrender.com/users/view/${filename}`
       );
       if (!response.ok) throw new Error("Failed to fetch PDF");
       const blob = await response.blob();

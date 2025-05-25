@@ -33,7 +33,7 @@ const AdminRegistration = ({ switchToUserReg }) => {
 
     try {
       const response = await axios.post(
-        `https://diamondcc.onrender.com/admin/register-admin`,
+        `https://diamondbackend-zss4.onrender.com/admin/register-admin`,
         formData,
         {
           headers: {

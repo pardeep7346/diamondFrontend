@@ -26,7 +26,7 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        `https://diamondcc.onrender.com/users/login`,
+        `https://diamondbackend-zss4.onrender.com/users/login`,
         formData,
         {
           headers: {

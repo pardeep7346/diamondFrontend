@@ -35,7 +35,7 @@ const AdminDashboard = () => {
       if (!token) {
         throw new Error("No access token found");
       }
-      const response = await axios.get(`https://diamondcc.onrender.com/users`, {
+      const response = await axios.get(`https://diamondbackend-zss4.onrender.com/users`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -58,7 +58,7 @@ const AdminDashboard = () => {
     try {
       const token = localStorage.getItem("accessToken");
       const response = await axios.delete(
-        `https://diamondcc.onrender.com/users/${userId}`,
+        `https://diamondbackend-zss4.onrender.com/users/${userId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -93,7 +93,7 @@ const AdminDashboard = () => {
      
 
       const response = await axios.post(
-        `https://diamondcc.onrender.com/users/register`,
+        `https://diamondbackend-zss4.onrender.com/users/register`,
         formData,
         {
           headers: {

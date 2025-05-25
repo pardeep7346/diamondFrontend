@@ -36,7 +36,7 @@ const ContactUs = () => {
     try {
       setStatus("Sending...");
       const response = await axios.post(
-       `https://diamondcc.onrender.com/users/contact`,
+       `https://diamondbackend-zss4.onrender.com/users/contact`,
         formData
       );
       setStatus(response.data.message);
